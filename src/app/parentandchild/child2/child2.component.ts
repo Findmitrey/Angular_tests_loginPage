@@ -7,10 +7,10 @@ import { CommunicationService} from '../communication.service'
 })
 export class Child2Component implements OnInit {
 
-  private child : string = 'parent';
-  private value : string = '';
+  public child : string = 'parent';
+  public value : string = '';
 
-  @Input() private message : string;
+  @Input() public message : string;
   @Output() private sentMsgToParent  = new EventEmitter();
 
   constructor(private service : CommunicationService) { }

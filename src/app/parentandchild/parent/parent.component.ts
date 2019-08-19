@@ -7,11 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ParentComponent implements OnInit {
 
-  private child :string = '';
-  private messageFromChild : string;
-  private value : string = '';
+  public child :string = '';
+  public messageFromChild : string;
+  public value : string = '';
   private text = 'Parent say: ';
-  private message = {
+  public message = {
     child1 : '',
     child2 : '',
     child3 : ''
