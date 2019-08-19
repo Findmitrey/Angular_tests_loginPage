@@ -1,0 +1,21 @@
+<div class="parent">
+    <h2>Parent</h2>
+    <p *ngIf='messageFromChild'>{{child}} say: {{messageFromChild}}</p>
+    <mat-form-field >
+        <input matInput type="text" placeholder="Say something" [(ngModel)]="value">
+    </mat-form-field>
+    <div class="groupBtn">
+        <button mat-stroked-button color="primary" (click)='sendMessage("child1")'>Say to child1</button>
+        <button mat-stroked-button color="primary" (click)='sendMessage("child2")'>Say to child2</button>
+        <button mat-stroked-button color="primary"(click)='sendMessage("child3")'>Say to child3</button>   
+        <button mat-raised-button color="primary" class="btn-lg" (click)='sendMessage("all")'>Tell everyone</button>  
+    </div>
+    
+    
+    <div class="child">
+        <app-child1 [message]='message.child1' (sentMsgToParent)='getMessage($event)'></app-child1>
+        <app-child2 [message]='message.child2' (sentMsgToParent)='getMessage($event)'></app-child2>
+        <app-child3 [message]='message.child3' (sentMsgToParent)='getMessage($event)'></app-child3>
+    </div>
+    
+</div>

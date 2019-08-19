@@ -1,0 +1,28 @@
+<div class="form">
+    <h2 class="form__title">Registration</h2>
+    <form [formGroup]='registrationForm' (ngSubmit)='registrationForm.valid && onRegistrationSubmit()'>
+        <mat-form-field>
+            <input matInput placeholder="Enter you name" formControlName="name">
+            <mat-error align="end" *ngIf="registrationForm.get('name').invalid">{{getErrorMessage('name')}}</mat-error>
+        </mat-form-field>
+        
+        <mat-form-field>
+            <input matInput placeholder="Enter you email or phone" formControlName="login" autocomplete="username">
+            <mat-error align="end" *ngIf="registrationForm.get('login').invalid">{{getErrorMessage('login')}}</mat-error>
+        </mat-form-field>
+    
+        <mat-form-field>
+            <input matInput placeholder="Enter you password" formControlName="password" type="password" autocomplete="current-password">
+            <mat-error align="end" *ngIf="registrationForm.get('password').invalid">{{getErrorMessage('password')}}</mat-error>
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit" class="btn_submit">Confirm</button>
+    </form>
+</div>
+    
+    
+    
+    
+    
+    
+    
+    
